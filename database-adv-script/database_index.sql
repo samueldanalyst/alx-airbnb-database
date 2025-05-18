@@ -17,3 +17,19 @@ CREATE INDEX idx_reviews_booking_id ON reviews(booking_id);
 -- CREATE INDEX idx_users_id ON users(id);
 -- CREATE INDEX idx_properties_id ON properties(id);
 -- CREATE INDEX idx_bookings_id ON bookings(id);
+SELECT *
+FROM booking
+WHERE profile_id = 1
+
+EXPLAIN ANALYZE
+SELECT *
+FROM booking
+WHERE profile_id = 42;
+
+CREATE INDEX idx_booking_profile_id ON booking(profile_id);
+
+EXPLAIN ANALYZE
+SELECT *
+FROM booking
+WHERE profile_id = 1;
+
